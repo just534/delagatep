@@ -110,6 +110,7 @@
             this.btnSend.TabIndex = 2;
             this.btnSend.Text = "广播消息";
             this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.BtnSend_Click);
             // 
             // FrmMain
             // 

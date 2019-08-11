@@ -21,6 +21,10 @@ namespace DelegateP
         {
             this.Text = name;
         }
+        public void ReceivedMsg(string msg)//接收主窗体广播消息的方法
+        {
+            this.txtReceived.Text = msg;
+        }
 
         private void btnChildSend_Click(object sender, EventArgs e)
         {
