@@ -12,7 +12,8 @@ namespace DelegateP
 {
     public partial class FrmChild : Form
     {
-        public PassMsgDelegate sendMsg;
+        //正常委托使用 public PassMsgDelegate sendMsg;
+        public event PassMsgDelegate sendMsg;
         public FrmChild()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace DelegateP
 
         private void btnChildSend_Click(object sender, EventArgs e)
         {
-            sendMsg(this.txtChildSend.Text, this.Text);
+           sendMsg(this.txtChildSend.Text, this.Text);
         }
 
     }

@@ -12,7 +12,9 @@ namespace DelegateP
 {
     public partial class FrmMain : Form
     {
-        public BcMsgDelegate bcMsg;
+        //正常委托使用  public BcMsgDelegate bcMsg;
+
+
         public FrmMain()
         {
             InitializeComponent();
@@ -32,8 +34,8 @@ namespace DelegateP
             for (int i = 0; i < 3; i++)
             {
                 FrmChild child = new FrmChild("子窗体"+(i+1).ToString());
-                child.sendMsg = this.ReceiveMsg;
-                this.bcMsg += child.ReceivedMsg;
+                child.sendMsg += this.ReceiveMsg;
+                //this.bcMsg += child.ReceivedMsg;
                 child.Show();
                  
             }
@@ -43,7 +45,7 @@ namespace DelegateP
 
         private void BtnSend_Click(object sender, EventArgs e)
         {
-            bcMsg(this.txtSend.Text);
+           // bcMsg(this.txtSend.Text);
         }
     }
     public delegate void PassMsgDelegate(string msg, string childname);
